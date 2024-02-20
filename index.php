@@ -45,7 +45,7 @@
                     <td><?php echo $row['descp']; ?></td>
                     <td>
                       <a name="edit" id="" class="btn btn-primary" href="edit-task.php?id=<?php echo $row['id']; ?>" role="button">Edit</a>
-                      <a name="delete" id="" class="btn btn-danger" href="#" role="button">Delete</a>
+                      <a name="delete" id="" class="btn btn-danger" href="backend/delete.php?id=<?php echo $row['id']; ?>" role="button">Delete</a>
                     </td>
                   </tr>
                   <?php
