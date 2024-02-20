@@ -1,4 +1,4 @@
-<?php include('config.php') ?>
+<?php require('backend/config.php') ?>
 
 <!doctype html>
 <html lang="en">
@@ -26,7 +26,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <form action="#" method="post" enctype="multipart/form-data">
+              <form action="backend/insert.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="">Task Title</label>
                   <input type="text" name="title" id="" class="form-control" placeholder="">

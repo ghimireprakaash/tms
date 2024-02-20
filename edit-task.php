@@ -1,5 +1,3 @@
-<?php include('backend/config.php') ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,49 +11,40 @@
   </head>
   <body>
     <div class="card">
+
       <div class="card-header">
         <div class="container">
           <div class="row">
-            <a name="" id="" class="btn btn-primary" href="add-task.php" role="button">Add Task</a>
+            <h3>Edit Your Task</h3>
           </div>
         </div>
       </div>
+
+
+      <?php require('backend/update.php'); ?>
+      
       <div class="card-body">
         <div class="container">
           <div class="row">
-            <h3>Manage Task</h3>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>SN</th>
-                  <th>Task Title</th>
-                  <th>Task Description</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php require('backend/display.php');
-                  $i=0;
-                  while($row = mysqli_fetch_array($exec_select)) {
-                    $i++;
-                    ?>
-                  <tr>
-                    <td scope="row"><?php echo $i; ?></td>
-                    <td><?php echo $row['title']; ?></td>
-                    <td><?php echo $row['descp']; ?></td>
-                    <td>
-                      <a name="edit" id="" class="btn btn-primary" href="edit-task.php?id=<?php echo $row['id']; ?>" role="button">Edit</a>
-                      <a name="delete" id="" class="btn btn-danger" href="#" role="button">Delete</a>
-                    </td>
-                  </tr>
-                  <?php
-                  }
-                  ?>
-              </tbody>
-            </table>
+            <div class="col-md-12">
+              <form action="backend/update.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="">Task Title</label>
+                  <input type="text" name="title" id="" class="form-control" placeholder="" value="<?php echo $old_title; ?>">
+                  <input type="hidden" name="task_id" id="" class="form-control" value="<?php echo $id; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="">Task Description</label>
+                  <textarea class="form-control" name="descp" id="" rows="3"><?php echo $old_descp; ?></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-success">Update</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="card-footer text-muted">
         <div class="container">
           <dir class="row">
@@ -63,6 +52,7 @@
           </dir>
         </div>
       </div>
+      
     </div>
     
 
