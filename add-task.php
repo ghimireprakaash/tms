@@ -29,11 +29,11 @@
               <form action="backend/insert.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="">Task Title</label>
-                  <input type="text" name="title" id="" class="form-control" placeholder="">
+                  <input type="text" name="title" id="" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                   <label for="">Task Description</label>
-                  <textarea class="form-control" name="descp" id="" rows="3"></textarea>
+                  <textarea class="form-control" name="descp" id="" rows="3" required></textarea>
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
